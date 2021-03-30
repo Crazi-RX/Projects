@@ -3,6 +3,7 @@ from tkinter import messagebox
 from tkinter import Frame, Tk, BOTH, Text, Menu, END
 from tkinter import filedialog
 import os
+import webbrowser
 ##### MAIN APPLICATION WINDOW #####
 class Window(Frame):
     def __init__(self, master=None):
@@ -10,7 +11,13 @@ class Window(Frame):
         self.master = master
         menu = Menu(self.master)
         self.master.config(menu=menu)
-
+        termsAgreement = messagebox.askquestion("Agree to our terms and conditions?", "Do you agree to our terms and conditions?")
+        if termsAgreement == 'no':
+            exit()
+        elif termsAgreement == 'yes':
+            messagebox.showinfo("Thanks for agreeing! Enjoy TKWord!", "Thanks for agreeing to our terms and conditions!")
+        else:
+            exit()
 ##### BUTTONS #####
         fileMenu = Menu(menu)
         fileMenu.add_command(label="New", command=self.newFile)
@@ -44,6 +51,8 @@ class Window(Frame):
 
         aboutMenu = Menu(menu)
         aboutMenu.add_command(label="Check for Updates", command=self.updateCheck)
+        aboutMenu.add_command(label="Terms And Conditions, command=self.termsCondition)
+        aboutMenu.add_command(label="Privacy Policy", command=self.privacyPolicy)
         aboutMenu.add_command(label="Patch Notes", command=self.patchNotes)
         aboutMenu.add_command(label="About TKWord")
         aboutMenu.add_command(label="About The Dev")
@@ -53,6 +62,12 @@ class Window(Frame):
     def updateCheck(self):
         messagebox.showerror("Check For Updates", "Check For Updates is not available for this update...")
 
+    def termsCondition(self):
+        webbrowser.open("https://www.termsandconditionsgenerator.com/live.php?token=SBsCoz73ag9X5yU66qzKhsj6UT6cSTxX")
+    
+    def privacyPolicy(self):
+        webbrowser.open("https://www.privacypolicygenerator.info/live.php?token=FuMiSsRPvZVFc2L372RiOPuOALL3wfsb")
+                              
     def patchNotes(self):
         messagebox.showinfo("Patch Notes", "In TKWord v0.2 includes: Improved Bug Fixes, Font Functionality, More Edit Functions")
 
