@@ -1,6 +1,6 @@
 Terms and Conditions Welcome to TKWord!
 
-These terms and conditions outline the rules and regulations for the use of Crazi-RX's Website, located at https://github.com/Crazi-RX/Projects/tree/main/TKWord%20v0.2%20Snapshot%201/src.
+These terms and conditions outline the rules and regulations for the use of Crazi-RX's Website, located at https://github.com/Crazi-RX/Projects/.
 
 By accessing this website we assume you accept these terms and conditions. Do not continue to use TKWord if you do not agree to take all of the terms and conditions stated on this page.
 
