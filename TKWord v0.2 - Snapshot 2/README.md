@@ -1,5 +1,7 @@
 Hello User! My name is Jacob Rogers, the developer of TKWord! This is a open-source application/Wordpad made with Python 3.8 and Tkinter! I used Tkinter For GUI and other uses like font, color, scrolled-text, etc.
 
+THIS IS A SNAPSHOT OF THE FULL VERSION BUT SOME FEATURES ARE CUT OUT OF THE SNAPSHOT DUE TO DEMO REASONS
+
 WARNING!: BEFORE USING THIS PROJECT MAKE SURE YOU HAVE PYTHON 3.8 OR NEWER AND TKINTER INSTALLED!
 
 PS: PLEASE READ THE PRIVACY POLICY AND TERMS AND CONDITIONS FILES PROVIDED BEFORE CONTINUING!
