@@ -6,7 +6,8 @@ if changeLog == "y":
           - Fixed Bug when Limit is exceeded on Deposit or Withdraw beyond the Bank Account limit or Pocket Change Limit
           - Fixed Bug when user accepts the Changelog and automatically quits the application.
           - Fixed Bug when user types letters into a deposit input or withdrawal input and causes the application to quit.
-          - Currently working on preventing the Pocket Change and Bank Account integers from going into negatives.""")
+          - Currently working on preventing the Pocket Change and Bank Account integers from going into negatives.
+          - Changed messages after transactions.""")
     print("""Terms and Conditions
           This program will not store private info. This is a fake atm and will not store
           any actual PIN numbers or usernames and passwords.""")
