@@ -4,22 +4,23 @@ changeLog = input("Would you like to see the Changelog?: (y/n)")
 if changeLog == "y":
     print("""Changelog:
           - Fixed Bug when Limit is exceeded on Deposit or Withdraw beyond the Bank Account limit or Pocket Change Limit
-          - """)
+          - Fixed Bug when user accepts the Changelog and automatically quits the application.
+          - Fixed Bug when user types letters into a deposit input or withdrawal input and causes the application to quit.
+          - Currently working on preventing the Pocket Change and Bank Account integers from going into negatives.""")
     print("""Terms and Conditions
           This program will not store private info. This is a fake atm and will not store
           any actual PIN numbers or usernames and passwords.""")
     TOS = input("Do you accept terms and conditions?: (y/n)")
     if TOS == "y":
-        print("""888       888 8888888888 888      .d8888b.   .d88888b.  888b     d888 8888888888 
+        print("""
+        888       888 8888888888 888      .d8888b.   .d88888b.  888b     d888 8888888888 
         888   o   888 888        888     d88P  Y88b d88P" "Y88b 8888b   d8888 888        
         888  d8b  888 888        888     888    888 888     888 88888b.d88888 888        
         888 d888b 888 8888888    888     888        888     888 888Y88888P888 8888888    
         888d88888b888 888        888     888        888     888 888 Y888P 888 888        
         88888P Y88888 888        888     888    888 888     888 888  Y8P  888 888        
         8888P   Y8888 888        888     Y88b  d88P Y88b. .d88P 888   "   888 888        
-        888P     Y888 8888888888 88888888 "Y8888P"   "Y88888P"  888       888 8888888888 
-                                                                                         
-                                                                                         
+        888P     Y888 8888888888 88888888 "Y8888P"   "Y88888P"  888       888 8888888888                                                                                   
                                                                                          """)
         print("""
         ********************************************************************************
@@ -71,7 +72,11 @@ if changeLog == "y":
                                 print("This transaction is greater than your balance")
                             bankBalance = bankBalance - drawalInput
                             pocketBalance = pocketBalance + drawalInput
-                            print(f"You have {bankBalance} remaining. Thanks for Choosing PYATM!")
+                            print(f"You have {pocketBalance} dollars in your pocket.")
+                            print(f"You have {bankBalance} remaining.")
+                            print("Thanks for Choosing PYATM!")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "2":
                             depositInput = int(input("How much do you want to deposit?: "))
                             if depositInput > pocketBalance:
@@ -79,9 +84,14 @@ if changeLog == "y":
                             else:
                                 pocketBalance = pocketBalance - depositInput
                                 bankBalance = bankBalance + depositInput
-                                print(bankBalance)
+                                print(f"You now have {bankBalance} dollars.")
+                                print(f"You now have {pocketBalance} in your pocket.")
+                                time.sleep(2)
+                                clearWindow()
                         elif atmChoice == "3":
-                            print(bankBalance)
+                            print(f"You have {bankBalance} dollars in your account.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "4":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
@@ -115,7 +125,10 @@ if changeLog == "y":
                                 print("This transaction is greater than your balance")
                             bankBalance = bankBalance - drawalInput
                             pocketBalance = pocketBalance + drawalInput
-                            print(f"You have {bankBalance} remaining. Thanks for Choosing PYATM!")
+                            print(f"You have {pocketBalance} dollars in your pocket.")
+                            print(f"You have {bankBalance} remaining.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "2":
                             depositInput = int(input("How much do you want to deposit?: "))
                             if depositInput > pocketBalance:
@@ -123,9 +136,15 @@ if changeLog == "y":
                             else:
                                 pocketBalance = pocketBalance - depositInput
                                 bankBalance = bankBalance + depositInput
-                                print(bankBalance)
+                                print(f"You have {pocketBalance} dollars in your pocket.")
+                                print(f"You have {bankBalance} remaining.")
+                                print("Thanks for Choosing PYATM!")
+                                time.sleep(2)
+                                clearWindow()
                         elif atmChoice == "3":
-                            print(bankBalance)
+                            print(f"You have {bankBalance} dollars in your account.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "4":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
@@ -159,7 +178,11 @@ if changeLog == "y":
                                 print("This transaction is greater than your balance")
                             bankBalance = bankBalance - drawalInput
                             pocketBalance = pocketBalance + drawalInput
-                            print(f"You have {bankBalance} remaining. Thanks for Choosing PYATM!")
+                            print(f"You have {pocketBalance} dollars in your pocket.")
+                            print(f"You have {bankBalance} remaining.")
+                            print("Thanks for Choosing PYATM!")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "2":
                             depositInput = int(input("How much do you want to deposit?: "))
                             if depositInput > pocketBalance:
@@ -167,9 +190,14 @@ if changeLog == "y":
                             else:
                                 pocketBalance = pocketBalance - depositInput
                                 bankBalance = bankBalance + depositInput
-                                print(bankBalance)
+                                print(f"You now have {bankBalance} dollars.")
+                                print(f"You now have {pocketBalance} in your pocket.")
+                                time.sleep(2)
+                                clearWindow()
                         elif atmChoice == "3":
-                            print(bankBalance)
+                            print(f"You have {bankBalance} dollars in your account.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "4":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
@@ -203,7 +231,11 @@ if changeLog == "y":
                                 print("This transaction is greater than your balance")
                             bankBalance = bankBalance - drawalInput
                             pocketBalance = pocketBalance + drawalInput
-                            print(f"You have {bankBalance} remaining. Thanks for Choosing PYATM!")
+                            print(f"You have {pocketBalance} dollars in your pocket.")
+                            print(f"You have {bankBalance} remaining.")
+                            print("Thanks for Choosing PYATM!")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "2":
                             depositInput = int(input("How much do you want to deposit?: "))
                             if depositInput > pocketBalance:
@@ -211,9 +243,14 @@ if changeLog == "y":
                             else:
                                 pocketBalance = pocketBalance - depositInput
                                 bankBalance = bankBalance + depositInput
-                                print(bankBalance)
+                                print(f"You now have {bankBalance} dollars.")
+                                print(f"You now have {pocketBalance} in your pocket.")
+                                time.sleep(2)
+                                clearWindow()
                         elif atmChoice == "3":
-                            print(bankBalance)
+                            print(f"You have {bankBalance} dollars in your account.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "4":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
@@ -246,7 +283,11 @@ if changeLog == "y":
                                 print("This transaction is greater than your balance")
                             bankBalance = bankBalance - drawalInput
                             pocketBalance = pocketBalance + drawalInput
-                            print(f"You have {bankBalance} remaining. Thanks for Choosing PYATM!")
+                            print(f"You have {pocketBalance} dollars in your pocket.")
+                            print(f"You have {bankBalance} remaining.")
+                            print("Thanks for Choosing PYATM!")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "2":
                             depositInput = int(input("How much do you want to deposit?: "))
                             if depositInput > pocketBalance:
@@ -254,9 +295,14 @@ if changeLog == "y":
                             else:
                                 pocketBalance = pocketBalance - depositInput
                                 bankBalance = bankBalance + depositInput
-                                print(bankBalance)
+                                print(f"You now have {bankBalance} dollars.")
+                                print(f"You now have {pocketBalance} in your pocket.")
+                                time.sleep(2)
+                                clearWindow()
                         elif atmChoice == "3":
-                            print(bankBalance)
+                            print(f"You have {bankBalance} dollars in your account.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "4":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
@@ -287,7 +333,8 @@ else:
           any actual PIN numbers or usernames and passwords.""")
     TOS = input("Do you accept terms and conditions?: (y/n)")
     if TOS == "y":
-        print("""888       888 8888888888 888      .d8888b.   .d88888b.  888b     d888 8888888888 
+        print("""
+        888       888 8888888888 888      .d8888b.   .d88888b.  888b     d888 8888888888 
         888   o   888 888        888     d88P  Y88b d88P" "Y88b 8888b   d8888 888        
         888  d8b  888 888        888     888    888 888     888 88888b.d88888 888        
         888 d888b 888 8888888    888     888        888     888 888Y88888P888 8888888    
@@ -295,8 +342,6 @@ else:
         88888P Y88888 888        888     888    888 888     888 888  Y8P  888 888        
         8888P   Y8888 888        888     Y88b  d88P Y88b. .d88P 888   "   888 888        
         888P     Y888 8888888888 88888888 "Y8888P"   "Y88888P"  888       888 8888888888 
-                                                                                         
-                                                                                         
                                                                                          """)
         print("""
         ********************************************************************************
@@ -348,7 +393,11 @@ else:
                                 print("This transaction is greater than your balance")
                             bankBalance = bankBalance - drawalInput
                             pocketBalance = pocketBalance + drawalInput
-                            print(f"You have {bankBalance} remaining. Thanks for Choosing PYATM!")
+                            print(f"You have {pocketBalance} dollars in your pocket.")
+                            print(f"You have {bankBalance} remaining.")
+                            print("Thanks for Choosing PYATM!")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "2":
                             depositInput = int(input("How much do you want to deposit?: "))
                             if depositInput > pocketBalance:
@@ -356,9 +405,14 @@ else:
                             else:
                                 pocketBalance = pocketBalance - depositInput
                                 bankBalance = bankBalance + depositInput
-                                print(bankBalance)
+                                print(f"You now have {bankBalance} dollars.")
+                                print(f"You now have {pocketBalance} in your pocket.")
+                                time.sleep(2)
+                                clearWindow()
                         elif atmChoice == "3":
-                            print(bankBalance)
+                            print(f"You have {bankBalance} dollars in your account.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "4":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
@@ -392,7 +446,10 @@ else:
                                 print("This transaction is greater than your balance")
                             bankBalance = bankBalance - drawalInput
                             pocketBalance = pocketBalance + drawalInput
-                            print(f"You have {bankBalance} remaining. Thanks for Choosing PYATM!")
+                            print(f"You have {pocketBalance} dollars in your pocket.")
+                            print(f"You have {bankBalance} remaining.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "2":
                             depositInput = int(input("How much do you want to deposit?: "))
                             if depositInput > pocketBalance:
@@ -400,9 +457,14 @@ else:
                             else:
                                 pocketBalance = pocketBalance - depositInput
                                 bankBalance = bankBalance + depositInput
-                                print(bankBalance)
+                                print(f"You now have {bankBalance} dollars.")
+                                print(f"You now have {pocketBalance} in your pocket.")
+                                time.sleep(2)
+                                clearWindow()
                         elif atmChoice == "3":
-                            print(bankBalance)
+                            print(f"You have {bankBalance} dollars in your account.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "4":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
@@ -436,7 +498,10 @@ else:
                                 print("This transaction is greater than your balance")
                             bankBalance = bankBalance - drawalInput
                             pocketBalance = pocketBalance + drawalInput
-                            print(f"You have {bankBalance} remaining. Thanks for Choosing PYATM!")
+                            print(f"You have {pocketBalance} dollars in your pocket.")
+                            print(f"You have {bankBalance} remaining.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "2":
                             depositInput = int(input("How much do you want to deposit?: "))
                             if depositInput > pocketBalance:
@@ -444,9 +509,14 @@ else:
                             else:
                                 pocketBalance = pocketBalance - depositInput
                                 bankBalance = bankBalance + depositInput
-                                print(bankBalance)
+                                print(f"You now have {bankBalance} dollars.")
+                                print(f"You now have {pocketBalance} in your pocket.")
+                                time.sleep(2)
+                                clearWindow()
                         elif atmChoice == "3":
-                            print(bankBalance)
+                            print(f"You have {bankBalance} dollars in your account.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "4":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
@@ -480,7 +550,10 @@ else:
                                 print("This transaction is greater than your balance")
                             bankBalance = bankBalance - drawalInput
                             pocketBalance = pocketBalance + drawalInput
-                            print(f"You have {bankBalance} remaining. Thanks for Choosing PYATM!")
+                            print(f"You have {pocketBalance} dollars in your pocket.")
+                            print(f"You have {bankBalance} remaining.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "2":
                             depositInput = int(input("How much do you want to deposit?: "))
                             if depositInput > pocketBalance:
@@ -488,9 +561,14 @@ else:
                             else:
                                 pocketBalance = pocketBalance - depositInput
                                 bankBalance = bankBalance + depositInput
-                                print(bankBalance)
+                                print(f"You now have {bankBalance} dollars.")
+                                print(f"You now have {pocketBalance} in your pocket.")
+                                time.sleep(2)
+                                clearWindow()
                         elif atmChoice == "3":
-                            print(bankBalance)
+                            print(f"You have {bankBalance} dollars in your account.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "4":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
@@ -523,7 +601,10 @@ else:
                                 print("This transaction is greater than your balance")
                             bankBalance = bankBalance - drawalInput
                             pocketBalance = pocketBalance + drawalInput
-                            print(f"You have {bankBalance} remaining. Thanks for Choosing PYATM!")
+                            print(f"You have {pocketBalance} dollars in your pocket.")
+                            print(f"You have {bankBalance} remaining.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "2":
                             depositInput = int(input("How much do you want to deposit?: "))
                             if depositInput > pocketBalance:
@@ -531,9 +612,14 @@ else:
                             else:
                                 pocketBalance = pocketBalance - depositInput
                                 bankBalance = bankBalance + depositInput
-                                print(bankBalance)
+                                print(f"You now have {bankBalance} dollars.")
+                                print(f"You now have {pocketBalance} in your pocket.")
+                                time.sleep(2)
+                                clearWindow()
                         elif atmChoice == "3":
-                            print(bankBalance)
+                            print(f"You have {bankBalance} dollars in your account.")
+                            time.sleep(2)
+                            clearWindow()
                         elif atmChoice == "4":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
