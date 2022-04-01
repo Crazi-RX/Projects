@@ -5,6 +5,12 @@ def clearWindow():
     if os.name in ('nt', 'dos'):
         command = 'cls'
     os.system(command)
+def changeWindowName():
+    command = 'gconftool-2 --set /apps/gnome-terminal/profiles/Default/title --type=string "PY-ATM v0.2 | ATM MACHINE ALPHA"'
+    if os.name in ('nt', 'dos'):
+        command = 'title PY-ATM v0.2 | ATM MACHINE ALPHA'
+    os.system(command)
+changeWindowName()
 changeLog = input("Would you like to see the Changelog?: (y/n)")
 if changeLog == "y":
     print("""Changelog:
@@ -12,10 +18,20 @@ if changeLog == "y":
           - Fixed Bug when user accepts the Changelog and automatically quits the application.
           - Fixed Bug when user types letters into a deposit input or withdrawal input and causes the application to quit.
           - Currently working on preventing the Pocket Change and Bank Account integers from going into negatives.
-          - Changed messages after transactions.""")
-    print("""Terms and Conditions
+          - Changed messages after transactions.
+          - Changed locations in the code for clearWindow() function.
+          - Added changeWindowName() function. If you have linux. Make sure you install gconftool.
+            Make sure you run the command first to see if you have it installed.
+          - Coming Soon: Installer, EXE file, seperate files for different outcomes in application.
+          - Fixed performance issues on other devices (Linux)
+          - Developer Mode Added! Developer mode is when you can access a menu and add money to bank balance
+            Pocket balance. Find out how to access it and have fun with Developer Features!""")
+    
+    print("""
+          Terms and Conditions
           This program will not store private info. This is a fake atm and will not store
           any actual PIN numbers or usernames and passwords.""")
+    
     TOS = input("Do you accept terms and conditions?: (y/n)")
     if TOS == "y":
         clearWindow()
@@ -104,6 +120,72 @@ if changeLog == "y":
                             print("1")
                             time.sleep(1)
                             exit()
+                        elif atmChoice == "devcrazi":
+                            print("DEVELOPER MODE ACCESSED!")
+                            time.sleep(2)
+                            clearWindow()
+                            while True:
+                                print("1. Withdrawal")
+                                print("2. Deposit")
+                                print("3. Check Balance")
+                                print("4. Add Money To Pocket")
+                                print("5. Add Money To Bank Account")
+                                print("6. Sign Out")
+                                time.sleep(1)
+                                atmChoice = input("Input the number of your choice: ")
+                                if atmChoice == "1":
+                                    drawalInput = int(input(f"How much do you want to withdraw? You have {bankBalance}: "))
+                                    if drawalInput > bankBalance:
+                                        print("This transaction is greater than your balance")
+                                    bankBalance = bankBalance - drawalInput
+                                    pocketBalance = pocketBalance + drawalInput
+                                    print(f"You have {pocketBalance} dollars in your pocket.")
+                                    print(f"You have {bankBalance} remaining.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "2":
+                                    depositInput = int(input("How much do you want to deposit?: "))
+                                    if depositInput > pocketBalance:
+                                        print("This transaction is greater than your balance.")
+                                    else:
+                                        pocketBalance = pocketBalance - depositInput
+                                        bankBalance = bankBalance + depositInput
+                                        print(f"You now have {bankBalance} dollars.")
+                                        print(f"You now have {pocketBalance} in your pocket.")
+                                        time.sleep(2)
+                                        clearWindow()
+                                elif atmChoice == "3":
+                                    print(f"You have {bankBalance} dollars in your account.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "4":
+                                    addMoneyPocket = int(input("How much money do you want to add?: "))
+                                    pocketBalance = pocketBalance + addMoneyPocket
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {pocketBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "5":
+                                    addMoneyBank = int(input("How much money you want to add to bank?: "))
+                                    bankBalance = bankBalance + addMoneyBank
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {bankBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "6":
+                                    print("Thanks for Choosing PYATM! See you next time!")
+                                    time.sleep(2)
+                                    print("Closing Application in...")
+                                    time.sleep(1)
+                                    print("3")
+                                    time.sleep(1)
+                                    print("2")
+                                    time.sleep(1)
+                                    print("1")
+                                    time.sleep(1)
+                                    exit()
+                                else:
+                                    print("Invalid Input! Closing Application...")
+                                    time.sleep(3)
+                                    exit()
                         else:
                             print("Invalid Input! Closing Application...")
                             time.sleep(3)
@@ -157,6 +239,72 @@ if changeLog == "y":
                             print("1")
                             time.sleep(1)
                             exit()
+                        elif atmChoice == "devcrazi":
+                            print("DEVELOPER MODE ACCESSED!")
+                            time.sleep(2)
+                            clearWindow()
+                            while True:
+                                print("1. Withdrawal")
+                                print("2. Deposit")
+                                print("3. Check Balance")
+                                print("4. Add Money To Pocket")
+                                print("5. Add Money To Bank Account")
+                                print("6. Sign Out")
+                                time.sleep(1)
+                                atmChoice = input("Input the number of your choice: ")
+                                if atmChoice == "1":
+                                    drawalInput = int(input(f"How much do you want to withdraw? You have {bankBalance}: "))
+                                    if drawalInput > bankBalance:
+                                        print("This transaction is greater than your balance")
+                                    bankBalance = bankBalance - drawalInput
+                                    pocketBalance = pocketBalance + drawalInput
+                                    print(f"You have {pocketBalance} dollars in your pocket.")
+                                    print(f"You have {bankBalance} remaining.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "2":
+                                    depositInput = int(input("How much do you want to deposit?: "))
+                                    if depositInput > pocketBalance:
+                                        print("This transaction is greater than your balance.")
+                                    else:
+                                        pocketBalance = pocketBalance - depositInput
+                                        bankBalance = bankBalance + depositInput
+                                        print(f"You now have {bankBalance} dollars.")
+                                        print(f"You now have {pocketBalance} in your pocket.")
+                                        time.sleep(2)
+                                        clearWindow()
+                                elif atmChoice == "3":
+                                    print(f"You have {bankBalance} dollars in your account.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "4":
+                                    addMoneyPocket = int(input("How much money do you want to add?: "))
+                                    pocketBalance = pocketBalance + addMoneyPocket
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {pocketBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "5":
+                                    addMoneyBank = int(input("How much money you want to add to bank?: "))
+                                    bankBalance = bankBalance + addMoneyBank
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {bankBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "6":
+                                    print("Thanks for Choosing PYATM! See you next time!")
+                                    time.sleep(2)
+                                    print("Closing Application in...")
+                                    time.sleep(1)
+                                    print("3")
+                                    time.sleep(1)
+                                    print("2")
+                                    time.sleep(1)
+                                    print("1")
+                                    time.sleep(1)
+                                    exit()
+                                else:
+                                    print("Invalid Input! Closing Application...")
+                                    time.sleep(3)
+                                    exit()
                         else:
                             print("Invalid Input! Closing Application...")
                             time.sleep(3)
@@ -210,6 +358,72 @@ if changeLog == "y":
                             print("1")
                             time.sleep(1)
                             exit()
+                        elif atmChoice == "devcrazi":
+                            print("DEVELOPER MODE ACCESSED!")
+                            time.sleep(2)
+                            clearWindow()
+                            while True:
+                                print("1. Withdrawal")
+                                print("2. Deposit")
+                                print("3. Check Balance")
+                                print("4. Add Money To Pocket")
+                                print("5. Add Money To Bank Account")
+                                print("6. Sign Out")
+                                time.sleep(1)
+                                atmChoice = input("Input the number of your choice: ")
+                                if atmChoice == "1":
+                                    drawalInput = int(input(f"How much do you want to withdraw? You have {bankBalance}: "))
+                                    if drawalInput > bankBalance:
+                                        print("This transaction is greater than your balance")
+                                    bankBalance = bankBalance - drawalInput
+                                    pocketBalance = pocketBalance + drawalInput
+                                    print(f"You have {pocketBalance} dollars in your pocket.")
+                                    print(f"You have {bankBalance} remaining.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "2":
+                                    depositInput = int(input("How much do you want to deposit?: "))
+                                    if depositInput > pocketBalance:
+                                        print("This transaction is greater than your balance.")
+                                    else:
+                                        pocketBalance = pocketBalance - depositInput
+                                        bankBalance = bankBalance + depositInput
+                                        print(f"You now have {bankBalance} dollars.")
+                                        print(f"You now have {pocketBalance} in your pocket.")
+                                        time.sleep(2)
+                                        clearWindow()
+                                elif atmChoice == "3":
+                                    print(f"You have {bankBalance} dollars in your account.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "4":
+                                    addMoneyPocket = int(input("How much money do you want to add?: "))
+                                    pocketBalance = pocketBalance + addMoneyPocket
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {pocketBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "5":
+                                    addMoneyBank = int(input("How much money you want to add to bank?: "))
+                                    bankBalance = bankBalance + addMoneyBank
+                                    print(f"Funds have been added. Enjoy with your money! You have {bankBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "6":
+                                    print("Thanks for Choosing PYATM! See you next time!")
+                                    time.sleep(2)
+                                    print("Closing Application in...")
+                                    time.sleep(1)
+                                    print("3")
+                                    time.sleep(1)
+                                    print("2")
+                                    time.sleep(1)
+                                    print("1")
+                                    time.sleep(1)
+                                    exit()
+                                else:
+                                    print("Invalid Input! Closing Application...")
+                                    time.sleep(3)
+                                    exit()
                         else:
                             print("Invalid Input! Closing Application...")
                             time.sleep(3)
@@ -263,6 +477,72 @@ if changeLog == "y":
                             print("1")
                             time.sleep(1)
                             exit()
+                        elif atmChoice == "devcrazi":
+                            print("DEVELOPER MODE ACCESSED!")
+                            time.sleep(2)
+                            clearWindow()
+                            while True:
+                                print("1. Withdrawal")
+                                print("2. Deposit")
+                                print("3. Check Balance")
+                                print("4. Add Money To Pocket")
+                                print("5. Add Money To Bank Account")
+                                print("6. Sign Out")
+                                time.sleep(1)
+                                atmChoice = input("Input the number of your choice: ")
+                                if atmChoice == "1":
+                                    drawalInput = int(input(f"How much do you want to withdraw? You have {bankBalance}: "))
+                                    if drawalInput > bankBalance:
+                                        print("This transaction is greater than your balance")
+                                    bankBalance = bankBalance - drawalInput
+                                    pocketBalance = pocketBalance + drawalInput
+                                    print(f"You have {pocketBalance} dollars in your pocket.")
+                                    print(f"You have {bankBalance} remaining.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "2":
+                                    depositInput = int(input("How much do you want to deposit?: "))
+                                    if depositInput > pocketBalance:
+                                        print("This transaction is greater than your balance.")
+                                    else:
+                                        pocketBalance = pocketBalance - depositInput
+                                        bankBalance = bankBalance + depositInput
+                                        print(f"You now have {bankBalance} dollars.")
+                                        print(f"You now have {pocketBalance} in your pocket.")
+                                        time.sleep(2)
+                                        clearWindow()
+                                elif atmChoice == "3":
+                                    print(f"You have {bankBalance} dollars in your account.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "4":
+                                    addMoneyPocket = int(input("How much money do you want to add?: "))
+                                    pocketBalance = pocketBalance + addMoneyPocket
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {pocketBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "5":
+                                    addMoneyBank = int(input("How much money you want to add to bank?: "))
+                                    bankBalance = bankBalance + addMoneyBank
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {bankBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "6":
+                                    print("Thanks for Choosing PYATM! See you next time!")
+                                    time.sleep(2)
+                                    print("Closing Application in...")
+                                    time.sleep(1)
+                                    print("3")
+                                    time.sleep(1)
+                                    print("2")
+                                    time.sleep(1)
+                                    print("1")
+                                    time.sleep(1)
+                                    exit()
+                                else:
+                                    print("Invalid Input! Closing Application...")
+                                    time.sleep(3)
+                                    exit()
                     else:
                         print("Invalid Input! Closing Application...")
                         time.sleep(3)
@@ -315,6 +595,72 @@ if changeLog == "y":
                             print("1")
                             time.sleep(1)
                             exit()
+                        elif atmChoice == "devcrazi":
+                            print("DEVELOPER MODE ACCESSED!")
+                            time.sleep(2)
+                            clearWindow()
+                            while True:
+                                print("1. Withdrawal")
+                                print("2. Deposit")
+                                print("3. Check Balance")
+                                print("4. Add Money To Pocket")
+                                print("5. Add Money To Bank Account")
+                                print("6. Sign Out")
+                                time.sleep(1)
+                                atmChoice = input("Input the number of your choice: ")
+                                if atmChoice == "1":
+                                    drawalInput = int(input(f"How much do you want to withdraw? You have {bankBalance}: "))
+                                    if drawalInput > bankBalance:
+                                        print("This transaction is greater than your balance")
+                                    bankBalance = bankBalance - drawalInput
+                                    pocketBalance = pocketBalance + drawalInput
+                                    print(f"You have {pocketBalance} dollars in your pocket.")
+                                    print(f"You have {bankBalance} remaining.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "2":
+                                    depositInput = int(input("How much do you want to deposit?: "))
+                                    if depositInput > pocketBalance:
+                                        print("This transaction is greater than your balance.")
+                                    else:
+                                        pocketBalance = pocketBalance - depositInput
+                                        bankBalance = bankBalance + depositInput
+                                        print(f"You now have {bankBalance} dollars.")
+                                        print(f"You now have {pocketBalance} in your pocket.")
+                                        time.sleep(2)
+                                        clearWindow()
+                                elif atmChoice == "3":
+                                    print(f"You have {bankBalance} dollars in your account.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "4":
+                                    addMoneyPocket = int(input("How much money do you want to add?: "))
+                                    pocketBalance = pocketBalance + addMoneyPocket
+                                    print(f"Funds have been added! Spend it wisely! You have {pocketBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "5":
+                                    addMoneyBank = int(input("How much money you want to add to bank?: "))
+                                    bankBalance = bankBalance + addMoneyBank
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {bankBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "6":
+                                    print("Thanks for Choosing PYATM! See you next time!")
+                                    time.sleep(2)
+                                    print("Closing Application in...")
+                                    time.sleep(1)
+                                    print("3")
+                                    time.sleep(1)
+                                    print("2")
+                                    time.sleep(1)
+                                    print("1")
+                                    time.sleep(1)
+                                    exit()
+                                else:
+                                    print("Invalid Input! Closing Application...")
+                                    time.sleep(3)
+                                    exit()
                         else:
                             print("Invalid Input! Closing Application...")
                             time.sleep(3)
@@ -419,10 +765,76 @@ else:
                             print("1")
                             time.sleep(1)
                             exit()
-                        else:
-                            print("Invalid Input! Closing Application...")
-                            time.sleep(3)
-                            exit()
+                        elif atmChoice == "devcrazi":
+                            print("DEVELOPER MODE ACCESSED!")
+                            time.sleep(2)
+                            clearWindow()
+                            while True:
+                                print("1. Withdrawal")
+                                print("2. Deposit")
+                                print("3. Check Balance")
+                                print("4. Add Money To Pocket")
+                                print("5. Add Money To Bank Account")
+                                print("6. Sign Out")
+                                time.sleep(1)
+                                atmChoice = input("Input the number of your choice: ")
+                                if atmChoice == "1":
+                                    drawalInput = int(input(f"How much do you want to withdraw? You have {bankBalance}: "))
+                                    if drawalInput > bankBalance:
+                                        print("This transaction is greater than your balance")
+                                    bankBalance = bankBalance - drawalInput
+                                    pocketBalance = pocketBalance + drawalInput
+                                    print(f"You have {pocketBalance} dollars in your pocket.")
+                                    print(f"You have {bankBalance} remaining.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "2":
+                                    depositInput = int(input("How much do you want to deposit?: "))
+                                    if depositInput > pocketBalance:
+                                        print("This transaction is greater than your balance.")
+                                    else:
+                                        pocketBalance = pocketBalance - depositInput
+                                        bankBalance = bankBalance + depositInput
+                                        print(f"You now have {bankBalance} dollars.")
+                                        print(f"You now have {pocketBalance} in your pocket.")
+                                        time.sleep(2)
+                                        clearWindow()
+                                elif atmChoice == "3":
+                                    print(f"You have {bankBalance} dollars in your account.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "4":
+                                    addMoneyPocket = int(input("How much money do you want to add?: "))
+                                    pocketBalance = pocketBalance + addMoneyPocket
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {pocketBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "5":
+                                    addMoneyBank = int(input("How much money you want to add to bank?: "))
+                                    bankBalance = bankBalance + addMoneyBank
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {bankBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "6":
+                                    print("Thanks for Choosing PYATM! See you next time!")
+                                    time.sleep(2)
+                                    print("Closing Application in...")
+                                    time.sleep(1)
+                                    print("3")
+                                    time.sleep(1)
+                                    print("2")
+                                    time.sleep(1)
+                                    print("1")
+                                    time.sleep(1)
+                                    exit()
+                                else:
+                                    print("Invalid Input! Closing Application...")
+                                    time.sleep(3)
+                                    exit()
+                            else:
+                                print("Invalid Input! Closing Application...")
+                                time.sleep(3)
+                                exit()
                 elif pinInput == PIN2:
                     print("Pin Accepted!")
                     time.sleep(2)
@@ -470,7 +882,73 @@ else:
                             time.sleep(1)
                             print("1")
                             time.sleep(1)
-                            exit()
+                            exit
+                        elif atmChoice == "devcrazi":
+                            print("DEVELOPER MODE ACCESSED!")
+                            time.sleep(2)
+                            clearWindow()
+                            while True:
+                                print("1. Withdrawal")
+                                print("2. Deposit")
+                                print("3. Check Balance")
+                                print("4. Add Money To Pocket")
+                                print("5. Add Money To Bank Account")
+                                print("6. Sign Out")
+                                time.sleep(1)
+                                atmChoice = input("Input the number of your choice: ")
+                                if atmChoice == "1":
+                                    drawalInput = int(input(f"How much do you want to withdraw? You have {bankBalance}: "))
+                                    if drawalInput > bankBalance:
+                                        print("This transaction is greater than your balance")
+                                    bankBalance = bankBalance - drawalInput
+                                    pocketBalance = pocketBalance + drawalInput
+                                    print(f"You have {pocketBalance} dollars in your pocket.")
+                                    print(f"You have {bankBalance} remaining.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "2":
+                                    depositInput = int(input("How much do you want to deposit?: "))
+                                    if depositInput > pocketBalance:
+                                        print("This transaction is greater than your balance.")
+                                    else:
+                                        pocketBalance = pocketBalance - depositInput
+                                        bankBalance = bankBalance + depositInput
+                                        print(f"You now have {bankBalance} dollars.")
+                                        print(f"You now have {pocketBalance} in your pocket.")
+                                        time.sleep(2)
+                                        clearWindow()
+                                elif atmChoice == "3":
+                                    print(f"You have {bankBalance} dollars in your account.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "4":
+                                    addMoneyPocket = int(input("How much money do you want to add?: "))
+                                    pocketBalance = pocketBalance + addMoneyPocket
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {pocketBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "5":
+                                    addMoneyBank = int(input("How much money you want to add to bank?: "))
+                                    bankBalance = bankBalance + addMoneyBank
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {bankBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "6":
+                                    print("Thanks for Choosing PYATM! See you next time!")
+                                    time.sleep(2)
+                                    print("Closing Application in...")
+                                    time.sleep(1)
+                                    print("3")
+                                    time.sleep(1)
+                                    print("2")
+                                    time.sleep(1)
+                                    print("1")
+                                    time.sleep(1)
+                                    exit()
+                                else:
+                                    print("Invalid Input! Closing Application...")
+                                    time.sleep(3)
+                                    exit()
                         else:
                             print("Invalid Input! Closing Application...")
                             time.sleep(3)
@@ -523,6 +1001,72 @@ else:
                             print("1")
                             time.sleep(1)
                             exit()
+                        elif atmChoice == "devcrazi":
+                            print("DEVELOPER MODE ACCESSED!")
+                            time.sleep(2)
+                            clearWindow()
+                            while True:
+                                print("1. Withdrawal")
+                                print("2. Deposit")
+                                print("3. Check Balance")
+                                print("4. Add Money To Pocket")
+                                print("5. Add Money To Bank Account")
+                                print("6. Sign Out")
+                                time.sleep(1)
+                                atmChoice = input("Input the number of your choice: ")
+                                if atmChoice == "1":
+                                    drawalInput = int(input(f"How much do you want to withdraw? You have {bankBalance}: "))
+                                    if drawalInput > bankBalance:
+                                        print("This transaction is greater than your balance")
+                                    bankBalance = bankBalance - drawalInput
+                                    pocketBalance = pocketBalance + drawalInput
+                                    print(f"You have {pocketBalance} dollars in your pocket.")
+                                    print(f"You have {bankBalance} remaining.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "2":
+                                    depositInput = int(input("How much do you want to deposit?: "))
+                                    if depositInput > pocketBalance:
+                                        print("This transaction is greater than your balance.")
+                                    else:
+                                        pocketBalance = pocketBalance - depositInput
+                                        bankBalance = bankBalance + depositInput
+                                        print(f"You now have {bankBalance} dollars.")
+                                        print(f"You now have {pocketBalance} in your pocket.")
+                                        time.sleep(2)
+                                        clearWindow()
+                                elif atmChoice == "3":
+                                    print(f"You have {bankBalance} dollars in your account.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "4":
+                                    addMoneyPocket = int(input("How much money do you want to add?: "))
+                                    pocketBalance = pocketBalance + addMoneyPocket
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {pocketBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "5":
+                                    addMoneyBank = int(input("How much money you want to add to bank?: "))
+                                    bankBalance = bankBalance + addMoneyBank
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {bankBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "6":
+                                    print("Thanks for Choosing PYATM! See you next time!")
+                                    time.sleep(2)
+                                    print("Closing Application in...")
+                                    time.sleep(1)
+                                    print("3")
+                                    time.sleep(1)
+                                    print("2")
+                                    time.sleep(1)
+                                    print("1")
+                                    time.sleep(1)
+                                    exit()
+                                else:
+                                    print("Invalid Input! Closing Application...")
+                                    time.sleep(3)
+                                    exit()
                         else:
                             print("Invalid Input! Closing Application...")
                             time.sleep(3)
@@ -575,6 +1119,72 @@ else:
                             print("1")
                             time.sleep(1)
                             exit()
+                        elif atmChoice == "devcrazi":
+                            print("DEVELOPER MODE ACCESSED!")
+                            time.sleep(2)
+                            clearWindow()
+                            while True:
+                                print("1. Withdrawal")
+                                print("2. Deposit")
+                                print("3. Check Balance")
+                                print("4. Add Money To Pocket")
+                                print("5. Add Money To Bank Account")
+                                print("6. Sign Out")
+                                time.sleep(1)
+                                atmChoice = input("Input the number of your choice: ")
+                                if atmChoice == "1":
+                                    drawalInput = int(input(f"How much do you want to withdraw? You have {bankBalance}: "))
+                                    if drawalInput > bankBalance:
+                                        print("This transaction is greater than your balance")
+                                    bankBalance = bankBalance - drawalInput
+                                    pocketBalance = pocketBalance + drawalInput
+                                    print(f"You have {pocketBalance} dollars in your pocket.")
+                                    print(f"You have {bankBalance} remaining.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "2":
+                                    depositInput = int(input("How much do you want to deposit?: "))
+                                    if depositInput > pocketBalance:
+                                        print("This transaction is greater than your balance.")
+                                    else:
+                                        pocketBalance = pocketBalance - depositInput
+                                        bankBalance = bankBalance + depositInput
+                                        print(f"You now have {bankBalance} dollars.")
+                                        print(f"You now have {pocketBalance} in your pocket.")
+                                        time.sleep(2)
+                                        clearWindow()
+                                elif atmChoice == "3":
+                                    print(f"You have {bankBalance} dollars in your account.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "4":
+                                    addMoneyPocket = int(input("How much money do you want to add?: "))
+                                    pocketBalance = pocketBalance + addMoneyPocket
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {pocketBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "5":
+                                    addMoneyBank = int(input("How much money you want to add to bank?: "))
+                                    bankBalance = bankBalance + addMoneyBank
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {bankBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "6":
+                                    print("Thanks for Choosing PYATM! See you next time!")
+                                    time.sleep(2)
+                                    print("Closing Application in...")
+                                    time.sleep(1)
+                                    print("3")
+                                    time.sleep(1)
+                                    print("2")
+                                    time.sleep(1)
+                                    print("1")
+                                    time.sleep(1)
+                                    exit()
+                                else:
+                                    print("Invalid Input! Closing Application...")
+                                    time.sleep(3)
+                                    exit()
                     else:
                         print("Invalid Input! Closing Application...")
                         time.sleep(3)
@@ -626,6 +1236,72 @@ else:
                             print("1")
                             time.sleep(1)
                             exit()
+                        elif atmChoice == "devcrazi":
+                            print("DEVELOPER MODE ACCESSED!")
+                            time.sleep(2)
+                            clearWindow()
+                            while True:
+                                print("1. Withdrawal")
+                                print("2. Deposit")
+                                print("3. Check Balance")
+                                print("4. Add Money To Pocket")
+                                print("5. Add Money To Bank Account")
+                                print("6. Sign Out")
+                                time.sleep(1)
+                                atmChoice = input("Input the number of your choice: ")
+                                if atmChoice == "1":
+                                    drawalInput = int(input(f"How much do you want to withdraw? You have {bankBalance}: "))
+                                    if drawalInput > bankBalance:
+                                        print("This transaction is greater than your balance")
+                                    bankBalance = bankBalance - drawalInput
+                                    pocketBalance = pocketBalance + drawalInput
+                                    print(f"You have {pocketBalance} dollars in your pocket.")
+                                    print(f"You have {bankBalance} remaining.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "2":
+                                    depositInput = int(input("How much do you want to deposit?: "))
+                                    if depositInput > pocketBalance:
+                                        print("This transaction is greater than your balance.")
+                                    else:
+                                        pocketBalance = pocketBalance - depositInput
+                                        bankBalance = bankBalance + depositInput
+                                        print(f"You now have {bankBalance} dollars.")
+                                        print(f"You now have {pocketBalance} in your pocket.")
+                                        time.sleep(2)
+                                        clearWindow()
+                                elif atmChoice == "3":
+                                    print(f"You have {bankBalance} dollars in your account.")
+                                    time.sleep(2)
+                                    clearWindow()
+                                elif atmChoice == "4":
+                                    addMoneyPocket = int(input("How much money do you want to add?: "))
+                                    pocketBalance = pocketBalance + addMoneyPocket
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {pocketBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "5":
+                                    addMoneyBank = int(input("How much money you want to add to bank?: "))
+                                    bankBalance = bankBalance + addMoneyBank
+                                    print(f"Funds have been added to your account! Spend it wisely! You have {bankBalance}!")
+                                    time.sleep(3)
+                                    clearWindow()
+                                elif atmChoice == "6":
+                                    print("Thanks for Choosing PYATM! See you next time!")
+                                    time.sleep(2)
+                                    print("Closing Application in...")
+                                    time.sleep(1)
+                                    print("3")
+                                    time.sleep(1)
+                                    print("2")
+                                    time.sleep(1)
+                                    print("1")
+                                    time.sleep(1)
+                                    exit()
+                                else:
+                                    print("Invalid Input! Closing Application...")
+                                    time.sleep(3)
+                                    exit()
                         else:
                             print("Invalid Input! Closing Application...")
                             time.sleep(3)
