@@ -1,5 +1,10 @@
 import time
 import os
+def clearWindow():
+    command = 'clear'
+    if os.name in ('nt', 'dos'):
+        command = 'cls'
+    os.system(command)
 changeLog = input("Would you like to see the Changelog?: (y/n)")
 if changeLog == "y":
     print("""Changelog:
@@ -13,6 +18,7 @@ if changeLog == "y":
           any actual PIN numbers or usernames and passwords.""")
     TOS = input("Do you accept terms and conditions?: (y/n)")
     if TOS == "y":
+        clearWindow()
         print("""
         888       888 8888888888 888      .d8888b.   .d88888b.  888b     d888 8888888888 
         888   o   888 888        888     d88P  Y88b d88P" "Y88b 8888b   d8888 888        
@@ -42,13 +48,6 @@ if changeLog == "y":
         print("Guest cannot access ATM in it's alpha state.")
         time.sleep(2)
         userInput = input("Please input Admin Username to Continue: ")
-        
-        def clearWindow():
-            command = 'clear'
-            if os.name in ('nt', 'dos'):
-                command = 'cls'
-            os.system(command)
-        
         if userInput == "devcrazi":
             passInput = input("Please input a password: ")
             if passInput == "pyatmdevcrazi3716":
@@ -334,6 +333,7 @@ else:
           any actual PIN numbers or usernames and passwords.""")
     TOS = input("Do you accept terms and conditions?: (y/n)")
     if TOS == "y":
+        clearWindow()
         print("""
         888       888 8888888888 888      .d8888b.   .d88888b.  888b     d888 8888888888 
         888   o   888 888        888     d88P  Y88b d88P" "Y88b 8888b   d8888 888        
@@ -363,13 +363,6 @@ else:
         print("Guest cannot access ATM in it's alpha state.")
         time.sleep(2)
         userInput = input("Please input Admin Username to Continue: ")
-        
-        def clearWindow():
-            command = 'clear'
-            if os.name in ('nt', 'dos'):
-                command = 'cls'
-            os.system(command)
-        
         if userInput == "devcrazi":
             passInput = input("Please input a password: ")
             if passInput == "pyatmdevcrazi3716":
