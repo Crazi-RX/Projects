@@ -11,7 +11,7 @@ Bug Fixes:
   Make sure you run the command first to see if you have it installed.
 - Fixed performance issues on other devices (Linux)
 
-Changelog:
+CHANGELOG:
 - Changed messages after transactions.
 - Changed locations in the code for clearWindow() function.
 
@@ -22,5 +22,5 @@ NEW FEATURES:
   Pocket balance. Find out how to access it and have fun with Developer Features!
 - Check wallet feature added to Dev Mode! Soon will be added to guest mode.
 
-Coming Soon:
+COMING SOON:
 - Installer, EXE file, seperate files for different outcomes in application.
