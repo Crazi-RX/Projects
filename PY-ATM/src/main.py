@@ -13,45 +13,48 @@ def changeWindowName():
 changeWindowName()
 changeLog = input("Would you like to see the Changelog?: (y/n)")
 if changeLog == "y":
-    print("""Changelog:
-          - Fixed Bug when Limit is exceeded on Deposit or Withdraw beyond the Bank Account limit or Pocket Change Limit
-          - Fixed Bug when user accepts the Changelog and automatically quits the application.
-          - Fixed Bug when user types letters into a deposit input or withdrawal input and causes the application to quit.
-          - Currently working on preventing the Pocket Change and Bank Account integers from going into negatives.
-          - Changed messages after transactions.
-          - Changed locations in the code for clearWindow() function.
-          - Added changeWindowName() function. If you have linux. Make sure you install gconftool.
-            Make sure you run the command first to see if you have it installed.
-          - Coming Soon: Installer, EXE file, seperate files for different outcomes in application.
-          - Fixed performance issues on other devices (Linux)
-          - Developer Mode Added! Developer mode is when you can access a menu and add money to bank balance
-            Pocket balance. Find out how to access it and have fun with Developer Features!""")
-    
+    print("""V0.2.1 UPDATE! 
+BUG FIXES:
+- Fixed Bug when Limit is exceeded on Deposit or Withdraw beyond the Bank Account limit or Pocket Change Limit
+- Fixed Bug when user accepts the Changelog and automatically quits the application.
+- Fixed Bug when user types letters into a deposit input or withdrawal input and causes the application to quit.
+- Currently working on preventing the Pocket Change and Bank Account integers from going into negatives.
+- Fixed performance issues on other devices (Linux)
+CHANGELOG:
+- Changed messages after transactions.
+- Changed locations in the code for clearWindow() function.
+- Changed idents of welcome messages, changelog, terms and conditions for sleek look.
+NEW FEATURES:
+- Added changeWindowName() function. If you have linux. Make sure you install gconftool. Make sure you run the command first to see if you have it installed.
+- Developer Mode Added! Developer mode is when you can access a menu and add money to bank balance Pocket balance. Find out how to access it and have fun with Developer Features!
+- Check wallet feature added to Dev Mode! Soon will be added to guest mode.
+COMING SOON:
+- Installer, EXE file, seperate files for different outcomes in application.""")
     print("""
-          Terms and Conditions
-          This program will not store private info. This is a fake atm and will not store
-          any actual PIN numbers or usernames and passwords.""")
+Terms and Conditions
+This program will not store private info. This is a fake atm and will not store
+any actual PIN numbers or usernames and passwords.""")
     
     TOS = input("Do you accept terms and conditions?: (y/n)")
     if TOS == "y":
         clearWindow()
         print("""
-        888       888 8888888888 888      .d8888b.   .d88888b.  888b     d888 8888888888 
-        888   o   888 888        888     d88P  Y88b d88P" "Y88b 8888b   d8888 888        
-        888  d8b  888 888        888     888    888 888     888 88888b.d88888 888        
-        888 d888b 888 8888888    888     888        888     888 888Y88888P888 8888888    
-        888d88888b888 888        888     888        888     888 888 Y888P 888 888        
-        88888P Y88888 888        888     888    888 888     888 888  Y8P  888 888        
-        8888P   Y8888 888        888     Y88b  d88P Y88b. .d88P 888   "   888 888        
-        888P     Y888 8888888888 88888888 "Y8888P"   "Y88888P"  888       888 8888888888                                                                                   
+888       888 8888888888 888      .d8888b.   .d88888b.  888b     d888 8888888888 
+888   o   888 888        888     d88P  Y88b d88P" "Y88b 8888b   d8888 888        
+888  d8b  888 888        888     888    888 888     888 88888b.d88888 888        
+888 d888b 888 8888888    888     888        888     888 888Y88888P888 8888888    
+888d88888b888 888        888     888        888     888 888 Y888P 888 888        
+88888P Y88888 888        888     888    888 888     888 888  Y8P  888 888        
+8888P   Y8888 888        888     Y88b  d88P Y88b. .d88P 888   "   888 888        
+888P     Y888 8888888888 88888888 "Y8888P"   "Y88888P"  888       888 8888888888                                                                                   
                                                                                          """)
         print("""
-        ********************************************************************************
-        *                                                                              *
-        *                                 WELCOME TO                                   *
-        *                                   PY-ATM                                     *
-        *                                                                              *
-        ********************************************************************************""")
+********************************************************************************
+*                                                                              *
+*                                 WELCOME TO                                   *
+*                                   PY-ATM                                     *
+*                                                                              *
+********************************************************************************""")
         bankBalance = 2500
         pocketBalance = 200
         PIN1 = 1234
@@ -131,6 +134,7 @@ if changeLog == "y":
                                 print("4. Add Money To Pocket")
                                 print("5. Add Money To Bank Account")
                                 print("6. Sign Out")
+                                print("7. Check Wallet")
                                 time.sleep(1)
                                 atmChoice = input("Input the number of your choice: ")
                                 if atmChoice == "1":
@@ -182,6 +186,10 @@ if changeLog == "y":
                                     print("1")
                                     time.sleep(1)
                                     exit()
+                                elif atmChoice == "7":
+                                    print(f"You opened your wallet. You count and remark {pocketBalance} dollars in your wallet.")
+                                    time.sleep(2)
+                                    clearWindow()
                                 else:
                                     print("Invalid Input! Closing Application...")
                                     time.sleep(3)
@@ -250,6 +258,7 @@ if changeLog == "y":
                                 print("4. Add Money To Pocket")
                                 print("5. Add Money To Bank Account")
                                 print("6. Sign Out")
+                                print("7. Check Wallet")
                                 time.sleep(1)
                                 atmChoice = input("Input the number of your choice: ")
                                 if atmChoice == "1":
@@ -301,6 +310,10 @@ if changeLog == "y":
                                     print("1")
                                     time.sleep(1)
                                     exit()
+                                elif atmChoice == "7":
+                                    print(f"You opened your wallet. You count and remark {pocketBalance} dollars in your wallet.")
+                                    time.sleep(2)
+                                    clearWindow()
                                 else:
                                     print("Invalid Input! Closing Application...")
                                     time.sleep(3)
@@ -369,6 +382,7 @@ if changeLog == "y":
                                 print("4. Add Money To Pocket")
                                 print("5. Add Money To Bank Account")
                                 print("6. Sign Out")
+                                print("7. Check Wallet")
                                 time.sleep(1)
                                 atmChoice = input("Input the number of your choice: ")
                                 if atmChoice == "1":
@@ -420,6 +434,10 @@ if changeLog == "y":
                                     print("1")
                                     time.sleep(1)
                                     exit()
+                                elif atmChoice == "7":
+                                    print(f"You opened your wallet. You count and remark {pocketBalance} dollars in your wallet.")
+                                    time.sleep(2)
+                                    clearWindow()
                                 else:
                                     print("Invalid Input! Closing Application...")
                                     time.sleep(3)
@@ -488,6 +506,7 @@ if changeLog == "y":
                                 print("4. Add Money To Pocket")
                                 print("5. Add Money To Bank Account")
                                 print("6. Sign Out")
+                                print("7. Check Wallet")
                                 time.sleep(1)
                                 atmChoice = input("Input the number of your choice: ")
                                 if atmChoice == "1":
@@ -539,6 +558,10 @@ if changeLog == "y":
                                     print("1")
                                     time.sleep(1)
                                     exit()
+                                elif atmChoice == "7":
+                                    print(f"You opened your wallet. You count and remark {pocketBalance} dollars in your wallet.")
+                                    time.sleep(2)
+                                    clearWindow()
                                 else:
                                     print("Invalid Input! Closing Application...")
                                     time.sleep(3)
@@ -606,6 +629,7 @@ if changeLog == "y":
                                 print("4. Add Money To Pocket")
                                 print("5. Add Money To Bank Account")
                                 print("6. Sign Out")
+                                print("7. Check Wallet")
                                 time.sleep(1)
                                 atmChoice = input("Input the number of your choice: ")
                                 if atmChoice == "1":
@@ -657,6 +681,10 @@ if changeLog == "y":
                                     print("1")
                                     time.sleep(1)
                                     exit()
+                                elif atmChoice == "7":
+                                    print(f"You opened your wallet. You count and remark {pocketBalance} dollars in your wallet.")
+                                    time.sleep(2)
+                                    clearWindow()
                                 else:
                                     print("Invalid Input! Closing Application...")
                                     time.sleep(3)
@@ -776,6 +804,7 @@ else:
                                 print("4. Add Money To Pocket")
                                 print("5. Add Money To Bank Account")
                                 print("6. Sign Out")
+                                print("7. Check Wallet")
                                 time.sleep(1)
                                 atmChoice = input("Input the number of your choice: ")
                                 if atmChoice == "1":
@@ -827,6 +856,10 @@ else:
                                     print("1")
                                     time.sleep(1)
                                     exit()
+                                elif atmChoice == "7":
+                                    print(f"You opened your wallet. You count and remark {pocketBalance} dollars in your wallet.")
+                                    time.sleep(2)
+                                    clearWindow()
                                 else:
                                     print("Invalid Input! Closing Application...")
                                     time.sleep(3)
@@ -894,6 +927,7 @@ else:
                                 print("4. Add Money To Pocket")
                                 print("5. Add Money To Bank Account")
                                 print("6. Sign Out")
+                                print("7. Check Wallet")
                                 time.sleep(1)
                                 atmChoice = input("Input the number of your choice: ")
                                 if atmChoice == "1":
@@ -945,6 +979,10 @@ else:
                                     print("1")
                                     time.sleep(1)
                                     exit()
+                                elif atmChoice == "7":
+                                    print(f"You opened your wallet. You count and remark {pocketBalance} dollars in your wallet.")
+                                    time.sleep(2)
+                                    clearWindow()
                                 else:
                                     print("Invalid Input! Closing Application...")
                                     time.sleep(3)
@@ -1012,6 +1050,7 @@ else:
                                 print("4. Add Money To Pocket")
                                 print("5. Add Money To Bank Account")
                                 print("6. Sign Out")
+                                print("7. Check Wallet")
                                 time.sleep(1)
                                 atmChoice = input("Input the number of your choice: ")
                                 if atmChoice == "1":
@@ -1063,6 +1102,10 @@ else:
                                     print("1")
                                     time.sleep(1)
                                     exit()
+                                elif atmChoice == "7":
+                                    print(f"You opened your wallet. You count and remark {pocketBalance} dollars in your wallet.")
+                                    time.sleep(2)
+                                    clearWindow()
                                 else:
                                     print("Invalid Input! Closing Application...")
                                     time.sleep(3)
@@ -1130,6 +1173,7 @@ else:
                                 print("4. Add Money To Pocket")
                                 print("5. Add Money To Bank Account")
                                 print("6. Sign Out")
+                                print("7. Check Wallet")
                                 time.sleep(1)
                                 atmChoice = input("Input the number of your choice: ")
                                 if atmChoice == "1":
@@ -1181,6 +1225,10 @@ else:
                                     print("1")
                                     time.sleep(1)
                                     exit()
+                                elif atmChoice == "7":
+                                    print(f"You opened your wallet. You count and remark {pocketBalance} dollars in your wallet.")
+                                    time.sleep(2)
+                                    clearWindow()
                                 else:
                                     print("Invalid Input! Closing Application...")
                                     time.sleep(3)
@@ -1247,6 +1295,7 @@ else:
                                 print("4. Add Money To Pocket")
                                 print("5. Add Money To Bank Account")
                                 print("6. Sign Out")
+                                print("7. Check Wallet")
                                 time.sleep(1)
                                 atmChoice = input("Input the number of your choice: ")
                                 if atmChoice == "1":
@@ -1298,6 +1347,10 @@ else:
                                     print("1")
                                     time.sleep(1)
                                     exit()
+                                elif atmChoice == "7":
+                                    print(f"You opened your wallet. You count and remark {pocketBalance} dollars in your wallet.")
+                                    time.sleep(2)
+                                    clearWindow()
                                 else:
                                     print("Invalid Input! Closing Application...")
                                     time.sleep(3)
