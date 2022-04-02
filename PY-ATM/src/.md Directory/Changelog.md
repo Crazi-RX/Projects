@@ -14,6 +14,7 @@ Bug Fixes:
 CHANGELOG:
 - Changed messages after transactions.
 - Changed locations in the code for clearWindow() function.
+- Changed idents of welcome messages, changelog, terms and conditions for sleek look.
 
 NEW FEATURES:
 - Added changeWindowName() function. If you have linux. Make sure you install gconftool.
