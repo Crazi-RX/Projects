@@ -5,9 +5,6 @@ Bug Fixes:
 - Fixed Bug when user types letters into a deposit input or withdrawal input and causes the application to
   quit.
 - Currently working on preventing the Pocket Change and Bank Account integers from going into negatives.
-- Changed messages after transactions.
-- Changed locations in the code for clearWindow() function.
-- Added changeWindowName() function. If you have linux. Make sure you install gconftool.
   Make sure you run the command first to see if you have it installed.
 - Fixed performance issues on other devices (Linux)
 
