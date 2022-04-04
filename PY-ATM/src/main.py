@@ -11,6 +11,8 @@ def changeWindowName():
     command = 'gconftool-2 --set /apps/gnome-terminal/profiles/Default/title --type=string "PY-ATM v0.2 | ATM MACHINE ALPHA"'
     if os.name in ('nt', 'dos'):
         command = 'title PY-ATM v0.2 | ATM MACHINE ALPHA'
+    else:
+        command = 'echo -n -e "\033]0;YOUR TITLE HERE\007"'
     os.system(command)
 changeWindowName()
 changeLog = input("Would you like to see the Changelog?: (y/n)")
