@@ -4,6 +4,8 @@ def clearWindow():
     command = 'clear'
     if os.name in ('nt', 'dos'):
         command = 'cls'
+    else:
+        command = 'clear'
     os.system(command)
 def changeWindowName():
     command = 'gconftool-2 --set /apps/gnome-terminal/profiles/Default/title --type=string "PY-ATM v0.2 | ATM MACHINE ALPHA"'
@@ -20,14 +22,18 @@ BUG FIXES:
 - Fixed Bug when user types letters into a deposit input or withdrawal input and causes the application to quit.
 - Currently working on preventing the Pocket Change and Bank Account integers from going into negatives.
 - Fixed performance issues on other devices (Linux)
+- Tweaked program to help with performance issues on Windows or MacOS.
 CHANGELOG:
 - Changed messages after transactions.
 - Changed locations in the code for clearWindow() function.
 - Changed idents of welcome messages, changelog, terms and conditions for sleek look.
 NEW FEATURES:
-- Added changeWindowName() function. If you have linux. Make sure you install gconftool. Make sure you run the command first to see if you have it installed.
-- Developer Mode Added! Developer mode is when you can access a menu and add money to bank balance Pocket balance. Find out how to access it and have fun with Developer Features!
-- Check wallet feature added to Dev Mode! Soon will be added to guest mode.
+- Added changeWindowName() function. If you have linux. Make sure you install gconftool. Make sure you run the command first to see if you have 
+  it installed.
+- Developer Mode Added! Developer mode is when you can access a menu and add money to bank balance Pocket balance. Find out how to access it and 
+  have fun with Developer Features!
+- Check wallet feature added to Dev Mode and Guest Mode!
+- Added MacOS support to the program with clearWindow() feature.
 COMING SOON:
 - Installer, EXE file, seperate files for different outcomes in application.""")
     print("""
@@ -82,7 +88,8 @@ any actual PIN numbers or usernames and passwords.""")
                         print("1. Withdrawal")
                         print("2. Deposit")
                         print("3. Check Balance")
-                        print("4. Sign Out")
+                        print("4. Check Wallet")
+                        print("5. Sign Out")
                         time.sleep(1)
                         atmChoice = input("Input the number of your choice: ")
                         if atmChoice == "1":
@@ -112,6 +119,10 @@ any actual PIN numbers or usernames and passwords.""")
                             time.sleep(2)
                             clearWindow()
                         elif atmChoice == "4":
+                            print(f"You throughly looked through your wallet and counted {pocketBalance} dollars.")
+                            time.sleep(2)
+                            clearWindow()
+                        elif atmChoice == "5":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
                             print("Closing Application in...")
@@ -206,7 +217,8 @@ any actual PIN numbers or usernames and passwords.""")
                         print("1. Withdrawal")
                         print("2. Deposit")
                         print("3. Check Balance")
-                        print("4. Sign Out")
+                        print("4. Check Wallet")
+                        print("5. Sign Out")
                         time.sleep(1)
                         atmChoice = input("Input the number of your choice: ")
                         if atmChoice == "1":
@@ -236,6 +248,10 @@ any actual PIN numbers or usernames and passwords.""")
                             time.sleep(2)
                             clearWindow()
                         elif atmChoice == "4":
+                            print(f"You throughly looked through your wallet and counted {pocketBalance} dollars.")
+                            time.sleep(2)
+                            clearWindow()
+                        elif atmChoice == "5":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
                             print("Closing Application in...")
@@ -330,7 +346,8 @@ any actual PIN numbers or usernames and passwords.""")
                         print("1. Withdrawal")
                         print("2. Deposit")
                         print("3. Check Balance")
-                        print("4. Sign Out")
+                        print("4. Check Wallet")
+                        print("5. Sign Out")
                         time.sleep(1)
                         atmChoice = input("Input the number of your choice: ")
                         if atmChoice == "1":
@@ -360,6 +377,10 @@ any actual PIN numbers or usernames and passwords.""")
                             time.sleep(2)
                             clearWindow()
                         elif atmChoice == "4":
+                            print(f"You throughly looked through your wallet and counted {pocketBalance} dollars.")
+                            time.sleep(2)
+                            clearWindow()
+                        elif atmChoice == "5":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
                             print("Closing Application in...")
@@ -454,7 +475,8 @@ any actual PIN numbers or usernames and passwords.""")
                         print("1. Withdrawal")
                         print("2. Deposit")
                         print("3. Check Balance")
-                        print("4. Sign Out")
+                        print("4. Check Wallet")
+                        print("5. Sign Out")
                         time.sleep(1)
                         atmChoice = input("Input the number of your choice: ")
                         if atmChoice == "1":
@@ -484,6 +506,10 @@ any actual PIN numbers or usernames and passwords.""")
                             time.sleep(2)
                             clearWindow()
                         elif atmChoice == "4":
+                            print(f"You throughly looked through your wallet and counted {pocketBalance} dollars.")
+                            time.sleep(2)
+                            clearWindow()
+                        elif atmChoice == "5":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
                             print("Closing Application in...")
@@ -577,7 +603,8 @@ any actual PIN numbers or usernames and passwords.""")
                         print("1. Withdrawal")
                         print("2. Deposit")
                         print("3. Check Balance")
-                        print("4. Sign Out")
+                        print("4. Check Wallet")
+                        print("5. Sign Out")
                         time.sleep(1)
                         atmChoice = input("Input the number of your choice: ")
                         if atmChoice == "1":
@@ -607,6 +634,10 @@ any actual PIN numbers or usernames and passwords.""")
                             time.sleep(2)
                             clearWindow()
                         elif atmChoice == "4":
+                            print(f"You throughly looked through your wallet and counted {pocketBalance} dollars.")
+                            time.sleep(2)
+                            clearWindow()
+                        elif atmChoice == "5":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
                             print("Closing Application in...")
@@ -752,7 +783,8 @@ else:
                         print("1. Withdrawal")
                         print("2. Deposit")
                         print("3. Check Balance")
-                        print("4. Sign Out")
+                        print("4. Check Wallet")
+                        print("5. Sign Out")
                         time.sleep(1)
                         atmChoice = input("Input the number of your choice: ")
                         if atmChoice == "1":
@@ -782,6 +814,10 @@ else:
                             time.sleep(2)
                             clearWindow()
                         elif atmChoice == "4":
+                            print(f"You throughly looked through your wallet and counted {pocketBalance} dollars.")
+                            time.sleep(2)
+                            clearWindow()
+                        elif atmChoice == "5":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
                             print("Closing Application in...")
@@ -876,7 +912,8 @@ else:
                         print("1. Withdrawal")
                         print("2. Deposit")
                         print("3. Check Balance")
-                        print("4. Sign Out")
+                        print("4. Check Wallet")
+                        print("5. Sign Out")
                         time.sleep(1)
                         atmChoice = input("Input the number of your choice: ")
                         if atmChoice == "1":
@@ -905,6 +942,10 @@ else:
                             time.sleep(2)
                             clearWindow()
                         elif atmChoice == "4":
+                            print(f"You throughly looked through your wallet and counted {pocketBalance} dollars.")
+                            time.sleep(2)
+                            clearWindow()
+                        elif atmChoice == "5":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
                             print("Closing Application in...")
@@ -999,7 +1040,8 @@ else:
                         print("1. Withdrawal")
                         print("2. Deposit")
                         print("3. Check Balance")
-                        print("4. Sign Out")
+                        print("4. Check Wallet")
+                        print("5. Sign Out")
                         time.sleep(1)
                         atmChoice = input("Input the number of your choice: ")
                         if atmChoice == "1":
@@ -1028,6 +1070,10 @@ else:
                             time.sleep(2)
                             clearWindow()
                         elif atmChoice == "4":
+                            print(f"You throughly looked through your wallet and counted {pocketBalance} dollars.")
+                            time.sleep(2)
+                            clearWindow()
+                        elif atmChoice == "5":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
                             print("Closing Application in...")
@@ -1122,7 +1168,8 @@ else:
                         print("1. Withdrawal")
                         print("2. Deposit")
                         print("3. Check Balance")
-                        print("4. Sign Out")
+                        print("4. Check Wallet")
+                        print("5. Sign Out")
                         time.sleep(1)
                         atmChoice = input("Input the number of your choice: ")
                         if atmChoice == "1":
@@ -1151,6 +1198,10 @@ else:
                             time.sleep(2)
                             clearWindow()
                         elif atmChoice == "4":
+                            print(f"You throughly looked through your wallet and counted {pocketBalance} dollars.")
+                            time.sleep(2)
+                            clearWindow()
+                        elif atmChoice == "5":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
                             print("Closing Application in...")
@@ -1244,7 +1295,8 @@ else:
                         print("1. Withdrawal")
                         print("2. Deposit")
                         print("3. Check Balance")
-                        print("4. Sign Out")
+                        print("4. Check Wallet")
+                        print("5. Sign Out")
                         time.sleep(1)
                         atmChoice = input("Input the number of your choice: ")
                         if atmChoice == "1":
@@ -1273,6 +1325,10 @@ else:
                             time.sleep(2)
                             clearWindow()
                         elif atmChoice == "4":
+                            print(f"You throughly looked through your wallet and counted {pocketBalance} dollars.")
+                            time.sleep(2)
+                            clearWindow()
+                        elif atmChoice == "5":
                             print("Thanks for Choosing PYATM! See you next time!")
                             time.sleep(2)
                             print("Closing Application in...")
