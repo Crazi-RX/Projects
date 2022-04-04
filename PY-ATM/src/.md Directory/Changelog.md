@@ -7,6 +7,7 @@ Bug Fixes:
 - Currently working on preventing the Pocket Change and Bank Account integers from going into negatives.
   Make sure you run the command first to see if you have it installed.
 - Fixed performance issues on other devices (Linux)
+- Tweaked program to help with performance issues on Windows or MacOS.
 
 CHANGELOG:
 - Changed messages after transactions.
@@ -18,7 +19,8 @@ NEW FEATURES:
   Make sure you run the command first to see if you have it installed.
 - Developer Mode Added! Developer mode is when you can access a menu and add money to bank balance
   Pocket balance. Find out how to access it and have fun with Developer Features!
-- Check wallet feature added to Dev Mode! Soon will be added to guest mode.
+- Check wallet feature added to Dev Mode and Guest Mode.
+- Added macOS support to the program with clearWindow() and changeWindowName().
 
 COMING SOON:
 - Installer, EXE file, seperate files for different outcomes in application.
