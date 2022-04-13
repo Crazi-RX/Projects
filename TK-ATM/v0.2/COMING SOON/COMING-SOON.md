@@ -1,2 +1,3 @@
 # COMING SOON
-## It will come when the initial alpha testing of v0.1 and finished features expectations of v0.1 before v0.2 comes out.
+## IT WILL NOT RELEASE UNTIL v0.1 TESTING IS DONE AND v0.1 IS DONE WITH MAIN FEATURES FINISHED
+### v0.2 IS COMING SOON ESTIMATED RELEASE MAY 28th, 2022.
