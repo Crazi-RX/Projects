@@ -4,6 +4,8 @@ import os
 import webbrowser
 
 version = "v0.1"
+username = "devcrazi"
+password = "tkinteratmRX"
 
 window = Tk()
 window.geometry("800x600")
@@ -18,7 +20,7 @@ warningScreen.geometry("600x300")
 warningScreen.title("WARNING! THIS IS PROGRAM IS STILL IN DEVELOPEMENT!")
 warningScreen.configure(bg="light blue")
 warningScreenAcknoledge = ttk.Button(warningScreen, text="Acknowledge", 
-                                     command=acknowledgeWarning).place(x=250, y=150, width=100, height=100)
+									 command=acknowledgeWarning).place(x=250, y=150, width=100, height=100)
 def changeLog():
 	changeLogScreen = Toplevel()
 	changeLogScreen.title("TK-ATM v0.1 CHANGELOG")
@@ -36,14 +38,13 @@ NEW FEATURES:
 - Added a dropdown menu includes (About The Developer, Changelog, Special Thanks)
 - All the features in the dropdown menu works.
 - Added a force quit button in dropdown menu.
-
+- Added username and password Label and ttk.Entry to Login Screen (NOT FUNCTIONAL CURRENTLY)
 CHANGELOG:
 - Fixed issue when .place function didn't work on positioning buttons.
 - Fixed issue when .pack side attribute didn't function.
 - Removed Button on Warning Screen with a replacement
 - Changed Warning Screen: Warning Screen has a button if the button has been clicked.
   You have acknowledged that you understand this program isn't finished.
-
 COMING SOON:
 - Functional Login Screen
 - Pin input screen
@@ -96,12 +97,11 @@ def specialThanks():
 						 text="Special Thanks to:", justify="center", bg="light blue")
 	specialLabel.pack()
 	thanksLabel = Label(thanksWindow, font=("Tekton Pro", 16),
-	 					text="""
+						text="""
 						 Codemy.com
 						 stackoverflow.com
 						 Python Basics
 						 tutorialspoint.com""", justify="center", bg="light blue").place(x=-370, y=65)
-
 
 def versionCheck():
 	versionWindow = Toplevel()
@@ -109,7 +109,7 @@ def versionCheck():
 	versionWindow.title("Checking for Updates...")
 	versionWindow.configure(bg="light blue")
 	currentVersionLabel = Label(versionWindow, text="Your current version is:",
-							 	font=("Tekton Pro", 18, "bold"), bg="light blue").pack()
+								font=("Tekton Pro", 18, "bold"), bg="light blue").pack()
 	versionLabel = Label(versionWindow, text="\n\nv0.1", font=("Tekton Pro", 28, "bold"),
 						 bg="light blue").pack()
 	if version == "v0.1":
@@ -125,11 +125,11 @@ def versionCheck():
 		notUpdatedLabel = Label(notUpdatedWindow, text="""Your version is outdated! Please Update It ASAP!""",
 								bg="light blue", font=("Tekton Pro", 17, "bold")).pack(side=TOP)
 		notUpdatedLabel2 = Label(notUpdatedWindow, text="\nUpdate it from the link below!:", 
-							 	 font=("Tekton Pro", 17, "bold"), bg="light blue").pack(side=TOP)
+								 font=("Tekton Pro", 17, "bold"), bg="light blue").pack(side=TOP)
 		notUpdatedLabel3 = Label(notUpdatedWindow, text="\nhttps://www.github.com/Crazi-RX/Projects/TK-ATM/", 
-							 	 font=("Tekton Pro", 17, "bold"), bg="light blue").pack(side=TOP)
+								 font=("Tekton Pro", 17, "bold"), bg="light blue").pack(side=TOP)
 		notUpdatedLabel4 = Label(notUpdatedWindow, text="\nClick 'Yes, take me there.' to take you to my github page to update.", 
-							 	 font=("Tekton Pro", 17, "bold"), bg="light blue").pack(side=TOP)
+								 font=("Tekton Pro", 17, "bold"), bg="light blue").pack(side=TOP)
 		notUpdatedLabel5 = Label(notUpdatedWindow, text="\nClick 'No, keep me here' to continue using the outdated version", 
 								 font=("Tekton Pro", 17, "bold"), bg="light blue").pack(side=TOP)
 		takeMeThere = ttk.Button(notUpdatedWindow, text="Yes, take me there").pack(side=BOTTOM)
@@ -153,8 +153,17 @@ def loginScreen():
 	loginWindow.geometry("800x600")
 	loginWindow.title("Login Screen | TK-ATM v0.1 ALPHA")
 	loginWindow.configure(bg="light blue")
+	def loginInput():
+		userNameInput = userName.get("1.0", "end-1c")
+		passWordInput = passWord.get("1.0", "end-1c")
+	userNameLabel = Label(loginWindow, text="Username", font=("Tekton Pro", 15, "bold"),
+						  bg="light blue").place(x=290, y=220)
+	userName = ttk.Entry(loginWindow, justify="center", font=('Arial', 15)).place(x=290, y=250)
+	passWordLabel = Label(loginWindow, text="Password", font=("Tekton Pro", 15, "bold"),
+						  bg="light blue").place(x=290, y=280)
+	passWord = ttk.Entry(loginWindow, show="*", justify="center", font=("Arial", 15)).place(x=290, y=310)
 	returnButton = ttk.Button(loginWindow, text="Return", 
-	                          command=returnToMain).place(x=0, y=0)
+							  command=returnToMain).place(x=0, y=0)
 	window.withdraw()
 
 welcomeLabel = Label(window, text="Welcome to TK-ATM!", font=("Tekton Pro", 26),
