@@ -9,7 +9,7 @@ password = "tkinteratmRX"
 
 window = Tk()
 window.geometry("800x600")
-window.title("TK-ATM | v0.1 ALPHA | VIRTUAL GUI ATM MACHINE")
+window.title("TK-ATM | v0.1 PRE-ALPHA | VIRTUAL GUI ATM MACHINE")
 window.configure(bg="light blue")
 
 def acknowledgeWarning():
@@ -57,10 +57,10 @@ COMING SOON:
 warningLabel = Label(warningScreen, text="""
 	WARNING!: This program is still in developement. Most features are not 
 	done and the application doesn't look polished since you're seeing the 
-	alpha version.This is for testing purposes only. This is meant to be used 
-	currently to find bugs and glitches across the GUI. Please leave an issue 
-	ticket on my GitHub page about a glitch/bug you found during testing. 
-	Thank you for your cooporation.""", 
+	pre-alpha version.This is for testing purposes only. This is meant to be 
+	used currently to find bugs and glitches across the GUI. Please leave an 
+	issue ticket on my GitHub page about a glitch/bug you found during 
+	testing. Thank you for your cooporation.""", 
 	fg="red", bg="light blue", font=("Tekton Pro", 12, "bold")).place(x=-50, y=0)
 
 def aboutDev():
@@ -75,11 +75,11 @@ def aboutDev():
 	TK-ATM is my first major project with Tkinter. Other Tkinter projects were meant for learning.
 	Most the stuff made in this program is made from scratch. I will be trying to get minimal help from
 	the internet but if I do. The names that the people that helped will be in the special thanks section.
-	TK-ATM is currently in the alpha stage. So something's will show in the program but might be not 
+	TK-ATM is currently in the pre-alpha stage. So something's will show in the program but might be not 
 	functional or have major bugs/issues. If you find some please submit a ticket on my GitHub page. 
 	TK-ATM is a GUI ATM that will be able to make transactions. With up to 10 different PIN numbers 
 	to choose from with different values of money that will be in the account. There will be a login 
-	screen in the alpha version like my PY-ATM to make people access the program itself so you 
+	screen in the pre-alpha version like my PY-ATM to make people access the program itself so you 
 	agree to what is behind the screen that it might be unfinished or have major bugs.""", 
 	bg="light blue", justify="center").place(x=-10, y=30)
 	devLabelThanks = Label(devWindow, text="\n Thanks for reading - Crazi-RX", bg="light blue",
@@ -91,7 +91,7 @@ def forceQuit():
 def specialThanks():
 	thanksWindow = Toplevel()
 	thanksWindow.geometry("600x300")
-	thanksWindow.title("Special Thanks | TK-ATM v0.1 ALPHA | GUI ATM MACHINE")
+	thanksWindow.title("Special Thanks | TK-ATM v0.1 PRE-ALPHA | GUI ATM MACHINE")
 	thanksWindow.configure(bg="light blue")
 	specialLabel = Label(thanksWindow, font=("Tekton Pro", 18, "bold"), 
 						 text="Special Thanks to:", justify="center", bg="light blue")
@@ -113,7 +113,7 @@ def versionCheck():
 	versionLabel = Label(versionWindow, text="\n\nv0.1", font=("Tekton Pro", 28, "bold"),
 						 bg="light blue").pack()
 	if version == "v0.1":
-		versionWindow.title("Your up to date on TK-ATM! | TK-ATM ALPHA")
+		versionWindow.title("Your up to date on TK-ATM! | TK-ATM PRE-ALPHA")
 		upToDateLabel = Label(versionWindow, text="\n\nYour version is up to date!",
 			  font=("Tekton Pro", 16, "bold"), bg="light blue").pack()
 	elif version != "v0.1":
@@ -151,7 +151,7 @@ def loginScreen():
 		window.deiconify()
 		loginWindow.destroy()
 	loginWindow.geometry("800x600")
-	loginWindow.title("Login Screen | TK-ATM v0.1 ALPHA")
+	loginWindow.title("Login Screen | TK-ATM v0.1 PRE-ALPHA")
 	loginWindow.configure(bg="light blue")
 	def loginInput():
 		userNameInput = userName.get("1.0", "end-1c")
