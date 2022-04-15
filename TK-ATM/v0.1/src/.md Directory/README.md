@@ -12,4 +12,6 @@
 - Special Thanks
 - Warning Screen
 - Welcome Screen
-- Login Screen with ttk.Entry boxes (NOT FUNCTIONAL)
+- Login Screen with ttk.Entry boxes
+- Pin Input Screen
+- Transaction Screen (IN DEVELOPMENT)
