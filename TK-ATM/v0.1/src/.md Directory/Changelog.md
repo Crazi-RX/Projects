@@ -14,6 +14,7 @@
 - Pin Input screen added.
 - Removed time.sleep() function and replaced with new working function called ".after()" on incorrect pin numbers and login attempts.
 - Added Check for Updates
+- Added Placeholders for Transaction Screen
 ## CHANGELOG:
 - Fixed issue when .place function didn't work on positioning buttons.
 - Fixed issue when .pack side attribute didn't function.
@@ -21,6 +22,7 @@
 - Changed Warning Screen: Warning Screen has a button if the button has been clicked.
   You have acknowledged that you understand this program isn't finished.
 - PIN Numbers changed from seperate definitions to a list.
+- Solved bug when logging out from transaction screen ('5678', '7890', '1987', '4321')
 ## COMING SOON:
 - Transaction screen/features
 - Updated visual graphics to windows
